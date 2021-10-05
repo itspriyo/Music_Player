@@ -1,5 +1,4 @@
 
-from re import M
 from logger import LOGGER
 try:
    import os
@@ -32,16 +31,16 @@ class Config:
     ADMINS = [int(admin) for admin in (ADMIN).split()] #group admins will be appended to this list.
     API_ID = int(os.environ.get("API_ID", ''))
     API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")     
     SESSION = os.environ.get("SESSION_STRING", "")
 
     #Stream Chat and Log Group
     CHAT = int(os.environ.get("CHAT", ""))
     LOG_GROUP=os.environ.get("LOG_GROUP", "")
 
-    #Stream
+    #Stream 
     STREAM_URL=os.environ.get("STARTUP_STREAM", "https://www.youtube.com/watch?v=zcrUCvBD16k")
-
+   
     #Database
     DATABASE_URI=os.environ.get("DATABASE_URI", None)
     DATABASE_NAME=os.environ.get("DATABASE_NAME", "VCPlayerBot")
@@ -50,17 +49,17 @@ class Config:
     #heroku
     API_KEY=os.environ.get("HEROKU_API_KEY", None)
     APP_NAME=os.environ.get("HEROKU_APP_NAME", None)
-
+    
     #Optional Configuration
     SHUFFLE=is_enabled(os.environ.get("SHUFFLE", 'True'))
     ADMIN_ONLY=is_enabled(os.environ.get("ADMIN_ONLY", "False"))
     REPLY_MESSAGE=os.environ.get("REPLY_MESSAGE", False)
     EDIT_TITLE = os.environ.get("EDIT_TITLE", True)
     #others
-
+    
     RECORDING_DUMP=os.environ.get("RECORDING_DUMP", False)
     RECORDING_TITLE=os.environ.get("RECORDING_TITLE", False)
-    TIME_ZONE = os.environ.get("TIME_ZONE", "Asia/Kolkata")
+    TIME_ZONE = os.environ.get("TIME_ZONE", "Asia/Kolkata")    
     IS_VIDEO=is_enabled(os.environ.get("IS_VIDEO", 'True'))
     IS_LOOP=is_enabled(os.environ.get("IS_LOOP", 'True'))
     DELAY=int(os.environ.get("DELAY", '10'))
@@ -135,7 +134,7 @@ class Config:
           BITRATE=False
     else:
        BITRATE=False
-
+    
     if FPS:
        try:
           FPS=int(FPS)
@@ -161,9 +160,9 @@ class Config:
        LOGGER.warning("Invalid QUALITY specified.Defaulting to High.")
        VIDEO_Q=HighQualityVideo()
        AUDIO_Q=HighQualityVideo()
+   
 
-
-    #help strings
+    #help strings 
     PLAY_HELP="""
 __You can play using any of these options__
 
@@ -194,7 +193,7 @@ __You can play using any of these options__
 
 🔹AVAILABLE CONFIGURATIONS:
 
-**Player Mode** -  __This allows you to run your player as 24/7 music player or only when there is song in queue.
+**Player Mode** -  __This allows you to run your player as 24/7 music player or only when there is song in queue. 
 If disabled, player will leave from the call when the playlist is empty.
 Otherwise STARTUP_STREAM will be streamed when playlist id empty.__
 
@@ -212,7 +211,7 @@ You can  set up a custom reply message using `REPLY_MESSAGE` confug.__
 
 """
     SCHEDULER_HELP="""
-__VCPlayer allows you to schedule a stream.
+__VCPlayer allows you to schedule a stream. 
 This means you can schedule a stream for a future date and on the scheduled date, stream will be played automatically.
 At present you can schedule a stream for even one year!!. Make sure you have set up a databse, else you will loose your schedules whenever the player restarts. __
 
@@ -233,7 +232,7 @@ __Cancel all the scheduled streams__
 """
     RECORDER_HELP="""
 __With VCPlayer you can easily record all your video chats.
-By default telegram allows you to record for a maximum duration of 4 hours.
+By default telegram allows you to record for a maximum duration of 4 hours. 
 An attempt to overcome this limit has been made by automatically restarting the recording after  4 hours__
 
 Command: **/record**
@@ -289,7 +288,7 @@ __VCPlayer allows you to control your streams easily__
     Command : **/unmute**
 
  11. Shows the playlist.
-    Command: **/playlist**
+    Command: **/playlist** 
     __Use /player to show with control buttons__
 """
 
@@ -314,10 +313,10 @@ __A json file will be sent to you and the same can be used along /import command
 
 Command : **/logs**
 __If your player went something gone wrong, you can easily check the logs using /logs__
-
+ 
 Command : **/env**
 __Setup your config vars with /env command.__
-__Example: To set up a__ `REPLY_MESSAGE` __use__ `/env REPLY_MESSAGE=Hey, Check out @Premium_Spam rather than spamming in my PM`__
+__Example: To set up a__ `REPLY_MESSAGE` __use__ `/env REPLY_MESSAGE=Hey, Check out @PremiumSpam rather than spamming in my PM`__
 __You can delete a config var by ommiting a value for that, Example:__ `/env LOG_GROUP=` __this will delete the existing LOG_GROUP config.
 
 Command: **/config**
@@ -345,9 +344,9 @@ Tip: __You can easily change the CHAT config by adding the user account and bot 
 
 5. `CHAT` : __ID of Channel/Group where the bot plays Music.__
 
-6. `STARTUP_STREAM` : __This will be streamed on startups and restarts of bot.
-You can use either any STREAM_URL or a direct link of any video or a Youtube Live link.
-You can also use YouTube Playlist.Find a Telegram Link for your playlist from [PlayList Dumb](https://telegram.dog/DumpPlaylist) or get a PlayList from [PlayList Extract](https://telegram.dog/GetAPlaylistbot).
+6. `STARTUP_STREAM` : __This will be streamed on startups and restarts of bot. 
+You can use either any STREAM_URL or a direct link of any video or a Youtube Live link. 
+You can also use YouTube Playlist.Find a Telegram Link for your playlist from [PlayList Dumb](https://telegram.dog/DumpPlaylist) or get a PlayList from [PlayList Extract](https://telegram.dog/GetAPlaylistbot). 
 The PlayList link should in form `https://t.me/DumpPlaylist/xxx`.__
 
 **Recommended Optional Vars**
