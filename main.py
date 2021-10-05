@@ -1,8 +1,8 @@
 
 from utils import (
-    play,
+    play, 
     start_stream,
-    startup_check,
+    startup_check, 
     sync_from_db
 )
 from user import group_call, USER
@@ -16,7 +16,7 @@ if Config.DATABASE_URI:
     from database import Database
     db = Database()
 
-
+    
 if not os.path.isdir("./downloads"):
     os.makedirs("./downloads")
 else:
@@ -39,7 +39,7 @@ async def main():
                         pass
             await sync_from_db()
         except Exception as e:
-            LOGGER.error(f"Errors occured while setting up database for Music Player, check the value of DATABASE_URI. Full error - {str(e)}")
+            LOGGER.error(f"Errors occured while setting up database for VCPlayerBot, check the value of DATABASE_URI. Full error - {str(e)}")
             LOGGER.info("Activating debug mode, you can reconfigure your bot with /env command.")
             await bot.stop()
             from debug import debug
@@ -50,6 +50,7 @@ async def main():
     if Config.DEBUG:
         LOGGER.info("Debugging enabled by user, Now in debug mode.")
         from debug import debug
+        await bot.stop()
         await debug.start()
         await idle()
         return
@@ -78,6 +79,7 @@ async def main():
         LOGGER.error(f"Startup was unsuccesfull, Errors - {e}")
         LOGGER.info("Activating debug mode, you can reconfigure your bot with /env command.")
         from debug import debug
+        await bot.stop()
         await debug.start()
         await idle()
         return
