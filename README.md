@@ -10,7 +10,7 @@ Telegram bot to stream videos in telegram voicechat for both groups and channels
 4. `SESSION_STRING` : Generate From here [![GenerateStringName](https://img.shields.io/badge/repl.it-generateStringName-yellowgreen)](https://repl.it/@subinps/getStringName)
 5. `CHAT` : ID of Channel/Group where the bot plays Music.
 
-## Recommended Optional Vars
+## Recommended Optional Vars (Needed)
 
 1. `DATABASE_URI`: MongoDB database Url, get from [mongodb](https://cloud.mongodb.com). This is an optional var, but it is recomonded to use this to experiance the full features.
 2. `HEROKU_API_KEY`: Your heroku api key. Get one from [here](https://dashboard.heroku.com/account/applications/authorizations/new)
