@@ -69,7 +69,7 @@ python3 main.py
 
 ### Note
 
-[Contact Me On Telegram](https://t.me/itspriyo)(P R I Y O)
+[Contact Me On Telegram](https://t.me/itspriyo) (P R I Y O)
 
 ## LICENSE
 
