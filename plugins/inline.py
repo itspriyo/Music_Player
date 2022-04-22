@@ -19,7 +19,7 @@ from pyrogram import (
 buttons = [
     [
         InlineKeyboardButton('⚡️Make Own Bot', url='https://github.com/itspriyo/Music_Player'),
-        InlineKeyboardButton('🧩 Join Here', url='https://t.me/PremiumNetworkCommunity'),
+        InlineKeyboardButton('🧩 Join Here', url='https://t.me/Priyo_Mirror'),
     ]
     ]
 def get_cmd(dur):
@@ -30,7 +30,7 @@ def get_cmd(dur):
 @Client.on_inline_query()
 async def search(client, query):
     answers = []
-    if query.query == "ETHO_ORUTHAN_PM_VANNU":
+    if query.query == "ITS_ME_PRIYO":
         answers.append(
             InlineQueryResultArticle(
                 title="Deploy",
