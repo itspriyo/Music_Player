@@ -8,7 +8,7 @@ import time
 from asyncio import sleep
 from pyrogram.raw.base import Update
 from pyrogram.raw.functions.channels import GetFullChannel
-from pytgcalls import PyTgCalls
+from pytgcalls import Client
 from pytgcalls.types import Update
 from pyrogram.raw.types import (
     UpdateGroupCall,
