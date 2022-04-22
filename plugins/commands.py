@@ -37,7 +37,7 @@ IST = pytz.timezone(Config.TIME_ZONE)
 if Config.DATABASE_URI:
     from database import db
 
-HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
+HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nI'm A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
 admin_filter=filters.create(is_admin)
 
 @Client.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
@@ -113,7 +113,7 @@ async def start(client, message):
         return
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/PremiumNetworkCommunity'),
+            InlineKeyboardButton('⚙️ Owner', url='https://t.me/P_R_I_Y_O_O'),
             InlineKeyboardButton('🧩 Source', url='https://github.com/itspriyo/Music_Player')
         ],
         [
@@ -173,10 +173,10 @@ async def repo_(client, message):
     buttons = [
         [
             InlineKeyboardButton('🧩 Repository', url='https://github.com/itspriyo/Music_Player'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/PremiumNetworkCommunity'),
+            InlineKeyboardButton('⚙️ Owner', url='https://t.me/P_R_I_Y_O_O'),
         ],
         [
-            InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
+            InlineKeyboardButton("🎞 How to Deploy", url='https://t.me/P_R_I_Y_O_O'),
             InlineKeyboardButton('🗑 Close', callback_data='close'),
         ]
     ]
@@ -186,7 +186,7 @@ async def repo_(client, message):
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def update_handler(client, message):
     if Config.HEROKU_APP:
-        k = await message.reply("Heroku APP found, Restarting app to update.")
+        k = await message.reply("Please wait, Restarting app to update.")
         if Config.DATABASE_URI:
             msg = {"msg_id":k.message_id, "chat_id":k.chat.id}
             if not await db.is_saved("RESTART"):
