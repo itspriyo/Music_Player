@@ -144,7 +144,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if not (query.from_user is None or query.from_user.id in admins):
             await query.answer(
-                "😒 Played Prioshe.mp3",
+                "😒 Played Priyo.mp3",
                 show_alert=True
                 )
             return
@@ -388,7 +388,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data=="help":
             buttons = [
                 [
-                    InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/PremiumNetworkCommunity'),
+                    InlineKeyboardButton('⚙️ Developer', url='https://t.me/P_R_I_Y_O_O'),
                     InlineKeyboardButton('🧩 Source', url='https://github.com/itspriyo/Music_Player'),
                 ]
             ]
