@@ -1,5 +1,5 @@
 git+https://github.com/pyrogram/pyrogram@master
-pytgcalls[pyrogram]
+py-tgcalls==0.8.1
 tgcrypto
 ffmpeg-python
 wrapt_timeout_decorator
